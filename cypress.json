@@ -1,0 +1,24 @@
+
+{
+  "baseurl":"https://test.crowdstreet.com",
+   "env": {
+     "email" : "testEmail1@johny.com",
+     "firstName" : "jay",
+     "lastName" : "Z",
+     "password" : "Passwd347!",
+     "confirmPassword" : "Passwd347!"
+   },
+  "reporterOptions": {
+    "reportDir": "integration-reports/integration/reports/mocha",
+    "quiet": false,
+    "html": true,
+    "overwrite": false,
+    "json": true
+  },
+  "videosFolder": "integration-reports/integration/public/videos",
+  "screenshotsFolder": "integration-reports/integration/public/screenshots",
+  "videoCompression": false,
+  "reporter": "mochawesome",
+  "browser": "electron",
+  "chromeWebSecurity": false
+}
