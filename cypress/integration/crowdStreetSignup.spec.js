@@ -38,7 +38,7 @@ context('crowdStreet signup process', function () {
 
     //Verifies the title of user matches the new user name
     cy.log('verifying the name in popup matches account username');
-    cy.get('.title').should('contain', Cypress.env('firstName'));
+    cy.get('.znexR').should('contain', Cypress.env('firstName'));
 
     //cy.get('.title').contains("Congrats, " + Cypress.env('firstName')+'!');
     waitOnIt();

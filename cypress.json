@@ -1,9 +1,9 @@
 {
   "baseurl": "https://test.crowdstreet.com",
   "env": {
-    "email": "Hezhossain@gmail.com",
-    "firstName": "jay",
-    "lastName": "Z",
+    "email": "Yogesh@gmall.com",
+    "firstName": "Yogesh",
+    "lastName": "Jubaid",
     "password": "Passwd347!",
     "confirmPassword": "Passwd347!"
   },
