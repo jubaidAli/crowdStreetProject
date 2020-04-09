@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("creatingNewAccount", () => {
+Cypress.Commands.add('creatingNewAccount', () => {
   //cy.log('Clicking on "Create new account"');
   //cy.get('.tablet-menu > .join-button').click();
 
@@ -33,27 +33,36 @@ Cypress.Commands.add("creatingNewAccount", () => {
   cy.log('Entering firstName');
   cy.get('.-left > .ui > input').click().type(Cypress.env('firstName'));
   cy.log('Entering lastName');
-  cy.get(':nth-child(2) > .ui > input').click().type(Cypress.env('lastName'));
+  cy.get(':nth-child(4) > :nth-child(2) > .ui > input')
+    .click()
+    .type(Cypress.env('lastName'));
   cy.log('Enter Password');
-  cy.get('.password-input-container > .input-container > .ui > input').type(Cypress.env('password'));
+  cy.get('.password-input-container > .input-container > .ui > input').type(
+    Cypress.env('password')
+  );
   cy.wait(1000);
   cy.log('Re-entering password');
-  cy.get('.password-confirm-input > .ui > input').type(Cypress.env('confirmPassword'));
-  
-  cy.log('Click checkbox')
+  cy.get('.password-confirm-input > .ui > input').type(
+    Cypress.env('confirmPassword')
+  );
+  cy.log('Entering phone Nummber');
+  cy.get(':nth-child(9) > .ui > input').click().type('5164567689');
+  cy.log('Are you an accreddited investor?');
   cy.get(':nth-child(1) > ._radio_e1a40').click();
+  cy.log('Click checkbox');
+  cy.get(':nth-child(1) > ._field_1fb41 > ._check_1fb41').click();
 
   cy.log('Accepting terms and conditions');
-  cy.get('._check_1fb41').click();
-  });
+  cy.get(':nth-child(2) > ._field_1fb41 > ._check_1fb41').click();
+});
 
-  Cypress.Commands.add('iframe', (iframeSelector, elSelector) => {
-    return cy
-      .get(`iframe${iframeSelector || ''}`, { timeout: 10000 })
-      .should($iframe => {
-        expect($iframe.contents().find(elSelector||'body')).to.exist
-      })
-      .then($iframe => {
-        return cy.wrap($iframe.contents().find('body'))
-      })
-  })
+Cypress.Commands.add('iframe', (iframeSelector, elSelector) => {
+  return cy
+    .get(`iframe${iframeSelector || ''}`, { timeout: 10000 })
+    .should(($iframe) => {
+      expect($iframe.contents().find(elSelector || 'body')).to.exist;
+    })
+    .then(($iframe) => {
+      return cy.wrap($iframe.contents().find('body'));
+    });
+});

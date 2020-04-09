@@ -1,13 +1,12 @@
-
 {
-  "baseurl":"https://test.crowdstreet.com",
-   "env": {
-     "email" : "testEmail1@johny.com",
-     "firstName" : "jay",
-     "lastName" : "Z",
-     "password" : "Passwd347!",
-     "confirmPassword" : "Passwd347!"
-   },
+  "baseurl": "https://test.crowdstreet.com",
+  "env": {
+    "email": "Hezhossain@gmail.com",
+    "firstName": "jay",
+    "lastName": "Z",
+    "password": "Passwd347!",
+    "confirmPassword": "Passwd347!"
+  },
   "reporterOptions": {
     "reportDir": "integration-reports/integration/reports/mocha",
     "quiet": false,
